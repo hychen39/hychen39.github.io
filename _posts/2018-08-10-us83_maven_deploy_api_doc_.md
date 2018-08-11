@@ -8,7 +8,6 @@ categories: Oracle Apex
 <!-- # 使用 Maven 自動部署 Natural Doc 編譯完成的 api document 到指定的 Web Server -->
 
 
-
 ## User Story
 
 使用 Maven 編譯 API doc:
@@ -38,9 +37,9 @@ mvn orclapex:run-natural-docs
 
 #### Task 1: 設定 Web Server 的 alias
 
- Step 1. 登入 remote\_server, 修改 `/etc/httpd/conf.d/mysite.conf`, 其中 `mysite.conf` 是你的 virtual host 的設定。
+ <span class="step"> Step </span> 登入 remote\_server, 修改 `/etc/httpd/conf.d/mysite.conf`, 其中 `mysite.conf` 是你的 virtual host 的設定。
 
- Step 在 Virtual Host 的標籤內加入以下的設定:
+ <span class="step"> Step </span> 在 Virtual Host 的標籤內加入以下的設定:
 
 ```text
  alias /api "/var/www/html/api"
@@ -52,9 +51,8 @@ mvn orclapex:run-natural-docs
     </Directory>
 ```
 
- Step 2. 確認 `/var/www/html/api/` 目錄存在, 並且有適當的寫入的權限, 以利用 `scp` 進本地端的檔案寫入到此目錄中。
-
- Step 3. Restart the web server
+ <span class="step">Step</span> 確認 `/var/www/html/api/` 目錄存在, 並且有適當的寫入的權限, 以利用 `scp` 進本地端的檔案寫入到此目錄中。
+ Restart the web server
 
 ```text
 $ systemctl stop httpd.service
@@ -65,7 +63,7 @@ $ systemctl start httpd.service
 
 我們會在本地端產生 ssh 連線所需要的公鑰及私鑰, 並將公鑰放置到 remote\_server。
 
- Step 4. 開啟 CygwinXX Terminal. 執行指令產生公鑰及私鑰:
+ <span class="step">Step</span> 開啟 CygwinXX Terminal. 執行指令產生公鑰及私鑰:
 
 ```text
 $ ssh-keygen -t rsa -b 4096 -C "Comment for the key"
@@ -77,19 +75,19 @@ $ ssh-keygen -t rsa -b 4096 -C "Comment for the key"
 
 產生的公鑰和私鑰會放在 `~/.ssh/` 目錄下, 名稱分別為: `id_rsa.pub` 及 `id_rsa`。
 
- Step 5. 將公鑰放置到 remote\_server:
+ <span class="step">Step</span> 將公鑰放置到 remote\_server:
 
 ```text
 $ ssh-copy-id u01@remore_server
 ```
 
- Step 6. 測試本地端是否可以直接登入, 不需要輸入密碼。
+ <span class="step">Step</span> 測試本地端是否可以直接登入, 不需要輸入密碼。
 
 #### Task 3: 設定 `pom.xml`
 
 我們會在 `pom.xml` 中加入 antrun maven plugin, 之後再設定 `sshexec` 及 `scp` 這兩個 task 的參數及屬性。
 
- Step 7. 在 `pom.xml` 的 plugins section 加入 `maven-antrun-plugin` 的設定。
+ <span class="step">Step</span> 在 `pom.xml` 的 plugins section 加入 `maven-antrun-plugin` 的設定。
 
 此設定包含: `dependency`, `executions`, 兩個小節. 在 `executions` 小節中加入一個 `execution` 小節, 設定該小節的 `id`, `goal`, 及 `configuration`. 我們會在 `configuration` 小節中放入 `target` 小節, 內含有兩個 ant tasks: `sshexec` 及 `scp`。 使用 `sshexec` task 移除 remote\_server 上 `/var/www/html/api/` 目錄內的內容。 使用 `scp` task 複製 本地端 `src/main/database/technical-docs` 目錄內的內容到 remote\_server 上。
 
@@ -147,7 +145,7 @@ $ ssh-copy-id u01@remore_server
 
 #### Task 4: 測試
 
- Step 8. 開啟 Cygwin terminal, 輸入以下指令執行 antrun task 中的 run goal 下的 `file-copy-api-doc` execution.
+ <span class="step">Step</span> 開啟 Cygwin terminal, 輸入以下指令執行 antrun task 中的 run goal 下的 `file-copy-api-doc` execution.
 
 ```text
 $ mvn antrun:run@file-copy-api-doc
@@ -184,4 +182,3 @@ main:
 ## References
 
 * Buytaert, N. \(2015\). Lifecycle Management. In Gault, D. et al \(Eds.\), _Expert Oracle Application Express_ \(pp. 359-402\), Apress 
-

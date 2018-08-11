@@ -18,8 +18,8 @@
 
 html body {
     font-family: "cwTeXYen", serif;
-    font-size: 14pt;
-    counter-reset: h1ctr;
+    font-size: 16pt;
+    /* counter-reset: h1ctr; */
 }
 
 img[alt] {
@@ -38,63 +38,68 @@ pre[class*="language-"] {
     word-wrap: break-word;
 }
 
-h1,
+h1 {font-size: 2rem}
+
 h2,
 h3, h4 {
-    font-size: 16pt !important;
+    font-size: 1.5rem;
 }
 
 html header {
-    font-size: 18pt;
+    font-size: 2rem;
     text-align: center;
 }
 
 .author {
     text-align: center;
-    font-size: 12pt;
+    font-size: 1rem;
 }
 
 
 /* Header Numbering */
 
-h1 {
+/* article h1 {
     counter-reset: h2ctr; 
+    
+} */
+
+/* h1:before {
+    counter-increment: h1ctr;
+    content: counter(h1ctr) ". ";
+} */
+
+article h2 {
+    counter-reset: h3ctr;
+    counter-increment: h2ctr;
     counter-reset: step_ctr;
 }
 
-h1:before {
-    counter-increment: h1ctr;
-    content: counter(h1ctr) ". ";
+article h2::before {
+    content: counter(h2ctr) ". ";
 }
 
-h2 {
-    counter-reset: h3ctr;
-    counter-increment: h2ctr;
-    
-}
-
-h2::before {
-    content: counter(h1ctr) "." counter(h2ctr) " ";
-}
-
-h3 {
+article h3 {
     counter-reset: h4ctr;
 }
 
-h3::before {
+article h3::before {
     counter-increment: h3ctr;
-    content: counter(h1ctr) "." counter(h2ctr) "." counter(h3ctr) " ";
+    content: counter(h2ctr) "." counter(h3ctr) " ";
 }
 
-h4 {
+article h4 {
     counter-increment: h4ctr;
 }
-h4::before {
+article h4::before {
     content: "(" counter(h4ctr, lower-alpha) ") ";
 }
 
 html body pre {
     border: 1px solid #ddd;
+}
+
+code  {
+    font-size: 1.2rem;
 }
 
 .step::after {
