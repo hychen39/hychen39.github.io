@@ -19,7 +19,7 @@ The article proposes a procedure the trouble shooting the `404 Not Found` proble
 
 The deployment for the Oracle Apex in our case is shown in the following:
 
-![The deployment for the Oracle Apex]({{"/assets/img/180824/img04.jpg" | absolute_url }})
+![The deployment for the Oracle Apex]({{"/assets/img/180824/img04.jpg" }})
 
 ## Procedure
 
@@ -45,7 +45,7 @@ Connect to the `Oracle DB` and use the following SQL statement to check these us
 select * from dba_users where USERNAME IN ('APEX_PUBLIC_USER', 'APEX_LISTENER', 'APEX_REST_PUBLIC_USER');
 ```
 
-![]({{"/assets/img/180824/img01.jpg" | absolute_url }})
+![]({{"/assets/img/180824/img01.jpg"}})
 
 If you don't have the three users, run the scrip `@apex_rest_config.sql` in the Apex install directory.
 
@@ -73,7 +73,7 @@ java -jar ords.war validate
 
 The logs of the installation and validation will be generated at `/usr/share/ords/logs`.
 
-![]({{"/assets/img/180824/img02.jpg" | absolute_url }})
+![]({{"/assets/img/180824/img02.jpg"}})
 
 <span class="step">Step</span> Check the status of the accounts used by the ORDS to connects to Oracle DB.
 
@@ -101,7 +101,7 @@ specify the configuration directory at `usr/share/ords/conf/ords/conf`.
 
 In this configuration directory, you can see four xml files:
 
-![]({{"/assets/img/180824/img03.jpg" | absolute_url }})
+![]({{"/assets/img/180824/img03.jpg"}})
 
 These xml files stores the names and passwords for the four accounts. Make sure the these accounts are consistent with those in the Oracle DB.
 
