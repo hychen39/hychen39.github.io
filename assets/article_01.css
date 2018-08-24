@@ -59,7 +59,7 @@ html header {
 /* Header Numbering */
 
 /* article h1 {
-    counter-reset: h2ctr; 
+    counter-reset: step_ctr; 
     
 } */
 
@@ -100,6 +100,10 @@ html body pre {
 
 code  {
     font-size: 1.2rem;
+}
+
+.step-start {
+    counter-reset: step_ctr;
 }
 
 .step::after {
