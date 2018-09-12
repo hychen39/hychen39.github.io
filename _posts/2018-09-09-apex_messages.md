@@ -11,13 +11,54 @@ categories: oracle_apex
 
 在 APEX 應用程式中, 執行 Process 後或者過程中常常需要後端由顯示訊息給使用者或開發人員.
 
-### 顯示 debug 訊息
+## 顯示 debug 訊息
 
 使用 `APEX_DEBUG` package 顯示訊息於 debug 頁面.
 
 `APEX_DEBUG` package 提供管理 debug message log 的工具函數. 這些工具函數包括: 
+- 啟用或停止不同 level 的 debug 訊息.
+- 清除 message log 的工具程序
 
-### 顯示 Process 執行錯誤成功訊息
+啟用應用程式的 debug mode 後, debug message 會顯示在 [Debug Report](https://docs.oracle.com/database/121/HTMDB/debug_mode.htm#HTMDB28546). 瀏覽 Application Builder > Select your application > (B)Edit Application Properties > (T)Properties, 將 `Debug` 屬性設為 `true`. 執行應用程式時預設進入 Debug Mode. 
+
+![]({{"/assets/img/180909/img02.jpg"}})
+
+也可使用 `APEX_DEBUG.ENABLE` 啟用 debug mode, `APEX_DEBUG.DISABLE` 結束 debug mode. 
+
+在 `APEX_DEBUG` package 定義了以下的常數, 表示不同的 [debug message log level](https://docs.oracle.com/database/121/AEAPI/apex_debug.htm#AEAPI29184):
+```sql
+subtype t_log_level is pls_integer; 
+c_log_level_error constant t_log_level := 1; -- critical error 
+c_log_level_warn constant t_log_level := 2; -- less critical error 
+c_log_level_info constant t_log_level := 4; -- default level if debugging is enabled (for example, used by apex_application.debug) 
+c_log_level_app_enter constant t_log_level := 5; -- application: messages when procedures/functions are entered 
+c_log_level_app_trace constant t_log_level := 6; -- application: other messages within procedures/functions 
+c_log_level_engine_enter constant t_log_level := 8; -- Application Express engine: messages when procedures/functions are entered 
+c_log_level_engine_trace constant t_log_level := 9; -- Application Express engine: other messages within procedures/functions 
+```
+
+預設的的 log level 為 `info`.
+
+使用 [`APEX_DEBUG.INFO`](https://docs.oracle.com/database/121/AEAPI/apex_debug.htm#AEAPI29204) 程序顯示 log 於 debug report 中. `APEX_DEBUG.INFO` 的簽名如下:
+```sql
+APEX_DEBUG.INFO ( 
+    p_message IN VARCHAR2, 
+    p0 IN VARCHAR2 DEFAULT NULL, 
+    p1 IN VARCHAR2 DEFAULT NULL, 
+    p2 IN VARCHAR2 DEFAULT NULL, 
+    p3 IN VARCHAR2 DEFAULT NULL, 
+    p4 IN VARCHAR2 DEFAULT NULL, 
+    p5 IN VARCHAR2 DEFAULT NULL, 
+    p6 IN VARCHAR2 DEFAULT NULL, 
+    p7 IN VARCHAR2 DEFAULT NULL, 
+    p8 IN VARCHAR2 DEFAULT NULL, 
+    p9 IN VARCHAR2 DEFAULT NULL, 
+    p_max_length IN PLS_INTEGER DEFAULT 1000 ); 
+```
+
+在 `p_message` 參數設定顯示訊息文字. 訊息中可放佔位字元 `%s`, 由後面的 `p1` 至 `p9` 參數依序取代. 也可使用 `%<n>` 指定特定的 `p<n>` 參數來取代.
+
+## 顯示 Process 執行錯誤成功訊息
 
 `APEX_APPLICATION` package 是實作 APEX Render Engine 的套件. 套件裡面定義了許多和 Render Engine 相關的 global 變數.
 
@@ -27,13 +68,14 @@ categories: oracle_apex
 例如:
 
 ```sql
---sample codes here
+apex_application.g_print_success_message := '借用單號:' || :P2730_ARR_ORDER_ID;
 ```
+![]({{"/assets/img/180909/img03.jpg"}})
 
 這個變數在 APEX API 文件上沒有說明.
 
 
-### 顯示 Process 執行錯誤訊息
+## 顯示 Process 執行錯誤訊息
   
   
 使用 `APEX_ERROR` package 顯示錯誤訊息[1].
