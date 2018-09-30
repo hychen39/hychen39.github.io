@@ -128,7 +128,7 @@ After the deployment procedure has passed the test, we deploy the application th
 
 ## References
 
-[1] [Liquibase | Database Refactoring](https://www.liquibase.org/)
+[1] [Liquibase Database Refactoring](https://www.liquibase.org/)
 
 [2] [Introducing the Oracle APEX Maven plugin](https://apexplained.wordpress.com/2014/04/08/introducing-the-oracle-apex-maven-plugin/)  
 
