@@ -129,9 +129,13 @@ After the deployment procedure has passed the test, we deploy the application th
 ## References
 
 [1] [Liquibase | Database Refactoring](https://www.liquibase.org/)
+
 [2] [Introducing the Oracle APEX Maven plugin](https://apexplained.wordpress.com/2014/04/08/introducing-the-oracle-apex-maven-plugin/)  
+
 [3] [nbuytaert1/orclapex-maven-demo](https://github.com/nbuytaert1/orclapex-maven-demo)
+
 [4] [Christoph Ruepprich et.al., 2015. Chapter 9 Lifecycle Management, Expert Oracle Application Express, Second Edition. O'Reilly.](https://www.oreilly.com/library/view/expert-oracle-application/9781484204849/)
+
 [5] [Apex Export CLI: one minute read by John Otander](https://nikitsky.github.io/oracle/apex/2017/05/09/apex-export-cli/)
 
   
