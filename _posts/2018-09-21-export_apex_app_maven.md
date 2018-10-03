@@ -30,7 +30,7 @@ Oracle Apex provides several ways to export an Apex application to a sql file.
 
 <span class="step">Step</span> Set up the SSH public-key authentication.
 
-Set up the SSH key to avoiding typing password when logging to remote server. Refer to [How To Set Up SSH Keys | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) to generate SSH key and deploy the public key to remote. 
+Set up the SSH key to avoiding typing password when logging to remote server. Refer to [How To Set Up SSH Keys (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) to generate SSH key and deploy the public key to remote. 
 
 
 <span class="step">Step</span> Create a shell script to export in the remote server the Apex Application file. 

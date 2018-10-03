@@ -80,10 +80,10 @@ article h2::before {
 
 article h3 {
     counter-reset: h4ctr;
+    counter-increment: h3ctr;
 }
 
 article h3::before {
-    counter-increment: h3ctr;
     content: counter(h2ctr) "." counter(h3ctr) " ";
 }
 
