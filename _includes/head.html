@@ -10,4 +10,14 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
+  {% endif %}
+
+  {% if page.description %}
+  <meta name="description" content="{{page.description}}">
+  {% endif %}
+
+<!-- Ref: https://stackoverflow.com/questions/50079063/adding-metadata-specific-to-each-post-in-jekyll -->
 </head>
