@@ -11,13 +11,15 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
 
+  <!-- SEO tags -->
+  <!-- Ref: https://stackoverflow.com/questions/50079063/adding-metadata-specific-to-each-post-in-jekyll -->
   {% if page.keywords %}
   <meta name="keywords" content="{{ page.keywords | join: ', ' | escape }}">
   {% endif %}
 
-  {% if page.description %}
+  <!-- {% if page.description %}
   <meta name="description" content="{{page.description}}">
-  {% endif %}
+  {% endif %} -->
 
-<!-- Ref: https://stackoverflow.com/questions/50079063/adding-metadata-specific-to-each-post-in-jekyll -->
+  {% seo %}
 </head>
