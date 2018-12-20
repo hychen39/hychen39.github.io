@@ -5,7 +5,10 @@ date:  2018-12-20
 categories: maven
 description: "使用 Maven 建置專案網站的設定步驟說明. 步驟包含: 建立網站目錄、網站版面的設定、 導覽列選單的設定、報表設定、網站部署設定及執行部署."
 keywords:
-    - TBD
+    - maven
+    - site plugin
+    - 網站
+    - 部署
 ---    
   
   
