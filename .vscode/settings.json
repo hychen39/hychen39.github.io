@@ -1,8 +1,9 @@
 {
-    "spellright.language": "en",
+    "spellright.language": [
+        "en"
+    ],
     "spellright.documentTypes": [
         "latex",
-        "sql",
-        "markdown"
+        "sql"
     ]
 }
