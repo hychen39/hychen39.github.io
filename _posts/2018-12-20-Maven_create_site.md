@@ -137,6 +137,7 @@ keywords:
 在 Maven 的 `pom.xml` 加入不同的 plugin 以自動產生需要的 reports。
 
 在 `<build>` 下加入 `maven-site-plugin`, 用以建置網站。如果部署時要使用 `scp`, 必須加入 `wagon-ssh` 的相依套件。
+另外, 設定 `outputEncoding` 為 UTF-8 避免輸出產生中文亂碼。
 
 ```xml
 <plugin>
@@ -146,6 +147,10 @@ keywords:
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-site-plugin</artifactId>
     <version>3.7.1</version>
+    <!-- Avoid the Chinese garbage codes -->
+    <configuration>
+          <outputEncoding>UTF-8</outputEncoding>
+    </configuration>
     <dependencies>
             <dependency><!-- add support for ssh/scp -->
               <groupId>org.apache.maven.wagon</groupId>
@@ -227,14 +232,16 @@ keywords:
 
 要部署的 `pom.xml` 內指定的伺服器, 執行:
 ```bash
-mvn site-deploy
+mvn clean site-deploy
 ```
 會在 `target/site/` 目錄下產生網站內容, 並部署到指定的 Server。
 
 若要在本地端單純產生網站內容, 執行:
 ```bash
-mvn site:site
+mvn clean site:site
 ```
+
+參考更多 [Maven Site 的 Goal 資訊](https://maven.apache.org/plugins/maven-site-plugin/)。
 
 
 ## References
