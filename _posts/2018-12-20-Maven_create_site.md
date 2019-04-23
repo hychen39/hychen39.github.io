@@ -14,7 +14,10 @@ keywords:
   
 ## 簡介
 
-使用 Maven 建置專案網站的設定步驟說明. 步驟包含: 建立網站目錄、網站版面的設定、 導覽列選單的設定、報表設定、網站部署設定及執行部署
+使用 Maven 建置及部署專案網站的設定步驟。完成後只要執行 `mvn site-deploy` 就可以進行程式編譯、測試、產生 javadoc 及測試報告，並自動部署到指定的 Server 目錄下。
+
+實作步驟包含: 建立網站目錄、在 `pom.xml` 中加入專案目錄、網站版面的設定、 導覽列選單的設定、報表設定、網站部署設定及執行部署。
+
 
 ## 實作步驟
 
@@ -36,7 +39,45 @@ keywords:
 
 `index.md` 的頁面 url 為: `http://host/project_name/index.html`. `page01.md` 的 url 為 `http://host/project_name/pub/page01.md`。
 
-## 網站版面的設定
+### 在 pom.xml 中加入更多網站的內容
+
+`pom.xml` 中可以使用以下 tag 提供專案的說明:
+* name: 專案名稱
+* inceptionYear: 專案設立年份
+* description: 專案內容摘要
+* organization: 組織/公司名稱及 url
+* developers: 開發者介紹
+```xml
+<!-- More Project Information -->
+    <name>Program Unit Text Replacer</name>
+    <inceptionYear>2018</inceptionYear>
+    <description>
+        使用 Oracle JDAPI 修改 Forms 程式內的 Program Unit 內的文字。將所有的 varchar2 資料型態的大小變成原來的 1.5 倍。
+        本計劃由 LogiCorner 公司委託執行。
+    </description>
+    <organization>
+        <name>邏輯方隅資訊科技 LogiCorner Info.Tech.</name>
+        <url>http://www.logicorner.com/</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>vincent.cheng</id>
+            <email>vincent.cheng@logicorner.com</email>
+            <organization>邏輯方隅資訊科技 LogiCorner Info.Tech.</organization>
+            <organizationUrl>http://www.logicorner.com/</organizationUrl>
+            <timezone>Asia/Taipei</timezone>
+        </developer>
+        <developer>
+            <id>hychen39</id>
+            <email>hychen39@gmail.com</email>
+            <organization>Department of Information Management, CYUT, Taiwan</organization>
+            <organizationUrl>http://webim.cyut.edu.tw/</organizationUrl>
+            <timezone>Asia/Taipei</timezone>
+        </developer>
+    </developers>
+```
+
+### 網站版面的設定
 `site.xml` 用來描述網站的版面配置(Layout)。可以設定:
 1. 網站的 left 及 right banner
 2. 計劃 Logo 下方的 links
@@ -95,7 +136,7 @@ keywords:
 
 在 Maven 的 `pom.xml` 加入不同的 plugin 以自動產生需要的 reports。
 
-在 `<build>` 下加入 `maven-site-plugin`, 用以建置網站。
+在 `<build>` 下加入 `maven-site-plugin`, 用以建置網站。如果部署時要使用 `scp`, 必須加入 `wagon-ssh` 的相依套件。
 
 ```xml
 <plugin>
@@ -105,6 +146,13 @@ keywords:
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-site-plugin</artifactId>
     <version>3.7.1</version>
+    <dependencies>
+            <dependency><!-- add support for ssh/scp -->
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-ssh</artifactId>
+              <version>1.0</version>
+            </dependency>
+    </dependencies>
 </plugin>
 ```
 
@@ -151,7 +199,7 @@ keywords:
 
 部署時的敏感資訊, 如賬號或密碼等, 可以不需放在 `pom.xml` 內。這些設定的資訊可以放在 `settings.xml` 檔案內, 不隨 Maven 散佈出去。
 
-`settings.xml` 檔案可以放在兩個地方 [2]: 
+`settings.xml` 檔案可以放在兩個地方 [1](#r01): 
 - Maven 的安裝目錄: `${maven.home}/conf/settings.xml`, 或者
 - 使用者的安裝目錄: `${user.home}/.m2/settings.xml`
 
@@ -172,7 +220,7 @@ keywords:
 </settings>
 ```
 
-更多的設定選項前參考 [2].
+更多的設定選項前參考 [2](#r02).
 
 
 ### 執行部署
@@ -191,5 +239,6 @@ mvn site:site
 
 ## References
 
-1. Apache Maven Project, Creating a site, https://maven.apache.org/guides/mini/guide-site.html, accessed on 2018/12/19
-2. Apache Maven Project, Settings Reference, https://maven.apache.org/settings.html, accessed on 2018/12/20
+<span id="r01">1.</span> Apache Maven Project, Creating a site, https://maven.apache.org/guides/mini/guide-site.html, accessed on 2018/12/19
+
+<span id="r02">2.</span> Apache Maven Project, Settings Reference, https://maven.apache.org/settings.html, accessed on 2018/12/20
