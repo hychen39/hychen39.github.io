@@ -7,9 +7,8 @@ description: Google Tag Manager Demo
 Click Event 
 
 <script>
-    // dataLayer = [];
-
     var entryTime = Date.now();
+   
     function clickTimeInterval(){
         let clickTime = Date.now();
         let intervalSeconds = (clickTime - entryTime)/1000
@@ -21,9 +20,15 @@ Click Event
     }
 </script>
 
+<style>
+.btn-click-dataLayer {
+    color: red;
+}
+</style>
+
 <a class="btn btn-click-event" > Click with class btn-click-event </a> <br />
 
-<a class="btn btn-click-event"  
+<a class="btn btn-click-dataLayer"  
     onClick = "clickTimeInterval()" > Click with data layer data </a> <br />
 
 <div id="clickTimeInterval"></div>
