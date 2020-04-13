@@ -16,6 +16,11 @@ keywords:
 
 ## Other Resources
 
+### Java EE
 - [JSF 2.2 View Declaration Language: Facelets Variant](https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/index.html)
 - [JavaServer Faces API (2.0)](https://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/)
 - [JSF Showcase - Liferay Faces - Liferay Community](https://faces.liferay.dev/jsf-showcase)
+
+### Java SE
+- [Java 字串的 interning 的功能 (String Pool)](https://www.baeldung.com/java-string-pool)
+- [How ArrayList Works Internally in Java](https://codenuclear.com/how-arraylist-works-internally-java/)
