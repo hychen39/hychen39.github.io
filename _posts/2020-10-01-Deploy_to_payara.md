@@ -103,6 +103,9 @@ mvn install
 ```
 mvn cargo:deployer-redeploy
 ```
+
+執行結果:
+```
 $ mvn cargo:deployer-redeploy
 [INFO] Scanning for projects...
 [INFO]
@@ -121,4 +124,3 @@ $ mvn cargo:deployer-redeploy
 [INFO] Total time:  11.187 s
 ```
 
-```
