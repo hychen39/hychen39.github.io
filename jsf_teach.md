@@ -17,6 +17,9 @@ keywords:
 ## Other Resources
 
 ### Java EE
+- [Enterprise Java (605.784.31) Fall 2019 |  John's Hopkins University, Engineering Programs for Professionals](https://webdev.jhuep.com/~jcs/ejava-javaee/)
+
+### JavaServer Faces
 - [JSF 2.2 View Declaration Language: Facelets Variant](https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/index.html)
 - [JavaServer Faces API (2.0)](https://docs.oracle.com/cd/E17802_01/j2ee/javaee/javaserverfaces/2.0/docs/api/)
 - [JSF Showcase - Liferay Faces - Liferay Community](https://faces.liferay.dev/jsf-showcase)
