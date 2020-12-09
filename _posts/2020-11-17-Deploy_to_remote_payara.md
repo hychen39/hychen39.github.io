@@ -164,13 +164,15 @@ Maven 執行時，會注入 `settings.xml` 中的 `<server>` 設定。
 
 在 Maven 的輸出結果中, 尋找關鍵字 Injected property 以查看注入的結果:
 
-> [DEBUG] [DeployerRedeployMojo] Resolved artifact and dependencies: [file:/C:/Users/user/.m2/repository/org/codehaus/cargo/cargo-core-container-payara/1.8.1/cargo-core-container-payara-1.8.1.jar, file:/C:/Users/user/.m2/repository/org/codehaus/cargo/cargo-core-container-glassfish/1.8.1/cargo-core-container-glassfish-1.8.1.jar]
-> [INFO] [DeployerRedeployMojo] Resolved container artifact org.codehaus.cargo:cargo-core-container-payara:jar:1.8.1 for container payara
-> [DEBUG] Found cargo.server.settings: Payara_Server_logi
-> [INFO] The Maven settings.xml file contains a reference for the server with identifier [Payara_Server_logi], injecting configuration properties
-> [DEBUG] 	Injected property: cargo.remote.username = admin
-> [DEBUG] 	Injected password property: cargo.remote.password= ***
-> [DEBUG] Performing deployment action into [Payara Remote]...
+```
+ [DEBUG] [DeployerRedeployMojo] Resolved artifact and dependencies: [file:/C:/Users/user/.m2/repository/org/codehaus/cargo/cargo-core-container-payara/1.8.1/cargo-core-container-payara-1.8.1.jar, file:/C:/Users/user/.m2/repository/org/codehaus/cargo/cargo-core-container-glassfish/1.8.1/cargo-core-container-glassfish-1.8.1.jar]
+ [INFO] [DeployerRedeployMojo] Resolved container artifact org.codehaus.cargo:cargo-core-container-payara:jar:1.8.1 for container payara
+ [DEBUG] Found cargo.server.settings: Payara_Server_logi
+ [INFO] The Maven settings.xml file contains a reference for the server with identifier [Payara_Server_logi], injecting configuration properties
+ [DEBUG] 	Injected property: cargo.remote.username = admin
+ [DEBUG] 	Injected password property: cargo.remote.password= ***
+ [DEBUG] Performing deployment action into [Payara Remote]...
+```
 
 ### 執行
 
