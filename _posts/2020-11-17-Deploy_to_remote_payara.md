@@ -129,7 +129,11 @@ Server 的連線資訊可以不要放在專案的 pom.xml。
 
 Maven 會依序讀取底下位置的 `settings.xml`:
 
-The Maven install: `$MAVEN_HOME/config/settings.xml`
+1. The Maven install: `$MAVEN_HOME/config/settings.xml`
+2. A user's install `$USER_HOME/.m2./settings.xml`
+
+把登入的資訊放在上述的其中位置之一。
+
 
 在 `$MAVEN_HOME\conf\settings.xml` 加入以下 `<server>` 設定:
 
@@ -143,9 +147,9 @@ The Maven install: `$MAVEN_HOME/config/settings.xml`
 </server>
 ```
 
-接著, 修改 `pom.xml`, 在 cargo plugin 的 configuration 加入:
+接著, 修改 `pom.xml`, 在 cargo plugin 的 configuration 加入以下的 property:
 ```xml
- <cargo.server.settings>Payara_Server_logi</cargo.server.settings> property:
+ <cargo.server.settings>Payara_Server_logi</cargo.server.settings>
 ```
 並把 `cargo.remote.username` 及 `cargo.remote.password` 註解掉:
 
@@ -155,7 +159,8 @@ The Maven install: `$MAVEN_HOME/config/settings.xml`
 <!--<cargo.remote.password>${payara.password}</cargo.remote.password>-->
 <cargo.server.settings>Payara_Server_logi</cargo.server.settings>
 ```
-Maven 執行時，會注入 settings.xml 中的 <server> 設定。
+
+Maven 執行時，會注入 `settings.xml` 中的 `<server>` 設定。
 
 在 Maven 的輸出結果中, 尋找關鍵字 Injected property 以查看注入的結果:
 
