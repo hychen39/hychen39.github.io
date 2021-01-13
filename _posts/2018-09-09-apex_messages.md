@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 在 Apex 由後端程式顯示自訂訊息
 date:   2018-08-29
 categories: oracle_apex

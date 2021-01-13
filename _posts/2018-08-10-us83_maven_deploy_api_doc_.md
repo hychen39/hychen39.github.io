@@ -1,8 +1,7 @@
 ---
-layout: post
 title:  "使用 Maven 自動部署 Natural Doc 編譯完成的 api document 到指定的 Web Server"
 date:   2018-08-02
-categories: Oracle Apex
+categories: [oracle_apex, maven]
 ---
 
 <!-- # 使用 Maven 自動部署 Natural Doc 編譯完成的 api document 到指定的 Web Server -->

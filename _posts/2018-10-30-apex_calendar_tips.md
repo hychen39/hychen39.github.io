@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Tips for the Apex Calendar
 date:   2018-11-01 11:02
 categories: oracle_apex

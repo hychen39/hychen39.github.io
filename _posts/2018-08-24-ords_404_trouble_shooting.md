@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Oracle ORDS Trouble Shooting
 date:   2018-08-24
 categories: oracle_apex

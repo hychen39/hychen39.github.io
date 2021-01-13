@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Export Oracle Apex Application from remote to local computers using Maven
 date: 2018-08-29
 categories: oracle_apex

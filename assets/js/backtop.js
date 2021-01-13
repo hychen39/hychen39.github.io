@@ -1,12 +1,16 @@
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction(); };
 
 function scrollFunction() {
-    console.log(document.body.scrollTop);
-    console.log(document.documentElement.scrollTop);
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("backTopBtn").style.display = "block";
-  } else {
-    document.getElementById("backTopBtn").style.display = "none";
+  // console.log(document.body.scrollTop);
+  // console.log(document.documentElement.scrollTop);
+  var backTopBtn = document.getElementById("backTopBtn"); 
+  // console.log(backTopBtn);
+  if (backTopBtn !== null) {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("backTopBtn").style.display = "block";
+    } else {
+      document.getElementById("backTopBtn").style.display = "none";
+    }
   }
 }
 

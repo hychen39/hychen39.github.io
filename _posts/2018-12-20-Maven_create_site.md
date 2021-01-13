@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 使用 Maven 建置專案網站
 date:  2018-12-20
 categories: maven

@@ -1,6 +1,6 @@
 ---
-layout: page
 title: JSF 教學
+permalink: /jsf_teach/
 keywords:
     - JavaServer Faces 教學
     - JSF 教學

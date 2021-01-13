@@ -1,5 +1,5 @@
 ---
-layout: page
+permalink: /apex/
 title: Oracle Apex 
 description: Oracle Apex 的技術心得與分享.
 ---

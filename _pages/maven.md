@@ -1,5 +1,5 @@
 ---
-layout: page
+permalink: /maven/
 title: "Maven 技術"
 keywords:
     - Maven howto

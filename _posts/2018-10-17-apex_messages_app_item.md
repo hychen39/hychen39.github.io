@@ -1,9 +1,8 @@
 ---
-layout: post
 title: Show the message generated from the PL/SQL process
 date:   2018-10-17
 categories: oracle_apex
-description: This article presents another way to show the message from the PL/SQL procees. We use the Application Item to store the message from the PL/SQL procees. There is a Application Process executing on the page loading to show the message in the Application Item using the JS functions in the  `apex.message` namespace.
+description: This article presents another way to show the message from the PL/SQL process. We use the Application Item to store the message from the PL/SQL process. There is a Application Process executing on the page loading to show the message in the Application Item using the JS functions in the  `apex.message` namespace.
 keywords:
     - plsql
     - oracle apex
@@ -18,7 +17,7 @@ keywords:
 
 We need to show the messages from the PL/SQL process (back-end) to the user (front-end) very often.
 
-One way is to use the globale variable `APEX_APPLICATION.G_PRINT_SUCCESS_MESSAGE`. The Apex will shows the message in the upper right corner with the green box. The method is suitable for showing information that doesn't need the user to interact with. 
+One way is to use the global variable `APEX_APPLICATION.G_PRINT_SUCCESS_MESSAGE`. The Apex will shows the message in the upper right corner with the green box. The method is suitable for showing information that doesn't need the user to interact with. 
 
 The second way is to use `APEX_ERROR.ADD_ERROR` procedure to add the message to the error stack. When loading the page, the Apex will show these messages. We can specify the locations of showing the messages either on the upper right corner or associate with pages items or event an error page. However, the  `APEX_ERROR.ADD_ERROR` procedure will interrupt the request processing process such that the codes after the `APEX_ERROR.ADD_ERROR` will not be executed. The method is appropriate for the form validation. 
 
@@ -28,7 +27,7 @@ This article presents another way to show the message from the PL/SQL procees. W
 
 ### Using PL/SQL to run JS codes
 
-Refert to [Execute Javascript through PL/SQL by Denes Kubicek](http://deneskubicek.blogspot.com/2009/05/execute-javascript-throuhg-plsql.html).
+Refer to [Execute Javascript through PL/SQL by Denes Kubicek](http://deneskubicek.blogspot.com/2009/05/execute-javascript-throuhg-plsql.html).
 
 The process responses the JS codes to the browser. The process must be executed when the Apex loading the page. 
 If the process is run on the point of After Submit, the responses made by calling `htp.p()` cannot send to the browser.
@@ -67,7 +66,7 @@ The procedure to show the message from the PL/SQL process using the application 
     2. Response the Javascript code to show the message.
     3. Clean the value of the application item.
 
-The implementationt steps are:
+The implementation steps are:
 
 <span class="step">Step</span> Create an application item `APP_MSG`.
 

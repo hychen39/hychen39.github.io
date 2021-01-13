@@ -1,0 +1,7 @@
+main:
+  - title: "JSF 教學"
+    url: /jsf_teach/
+  - title: "Oracle Apex"
+    url: /apex/
+  - title: "Maven How-To"
+    url: /maven/

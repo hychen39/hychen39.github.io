@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 使用 Maven Cargo plugin 部署 JSF 專案到 Payara Server
 date:  2020/10/01
 categories: maven
@@ -8,9 +7,10 @@ keywords:
     - maven
     - cargo plugin
     - deploy
-
 ---    
-  
+
+[Maven How-To]({{site.baseurl}}/maven/)
+
   
 ## 簡介
 

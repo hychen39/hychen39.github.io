@@ -1,8 +1,7 @@
 ---
-layout: post
 title:  "自動產生 HTML 文件的目錄 (table of content) "
 date:   2018-08-11
-categories: Frontend Javascript
+categories: [web_dev, oracle_apex]
 ---
 
 
