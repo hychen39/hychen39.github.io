@@ -37,10 +37,10 @@ author:
 # Build settings
 # theme: minima
 # Local Theme. Enable this and comment the remote them when local editing.
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 
 # Enable the remote theme and comment the local theme when deploy to GitHub.
-# remote_theme: "mmistakes/minimal-mistakes@4.21.0"
+remote_theme: "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin: "mint"  # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 
 plugins:

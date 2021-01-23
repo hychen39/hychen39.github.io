@@ -8,17 +8,17 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.2.0"
+# gem "jekyll", "~> 4.2.0"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.5"
 # Comment the line below when use the remote view
-gem "minimal-mistakes-jekyll"
+# gem "minimal-mistakes-jekyll"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # Uncommeht the line below when deploy to the github
-# gem "github-pages", group: :jekyll_plugins
+gem "github-pages", group: :jekyll_plugins
 
 gem "jekyll-include-cache", group: :jekyll_plugins
 
