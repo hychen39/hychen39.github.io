@@ -11,7 +11,7 @@ h1 {
 } */
 
 h2 {
-    counter-reset: h3ctr;
+    counter-reset: h3ctr step_ctr;
     counter-increment: h2ctr;
     
 }
