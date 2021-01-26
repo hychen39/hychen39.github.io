@@ -6,8 +6,6 @@ categories: angular
 <link rel="stylesheet" href="/assets/css/header_numbering.css">
 <link rel="stylesheet" href="/assets/css/step_numbering.css">
 
-# Unit 14 特性模組 (Feature Modules)
-
 
 ## 和 特性模組相關的 NgModule Metadata 的特性
 
