@@ -96,4 +96,6 @@ defaults:
       layout: single
       author_profile: true
 
- 
+# Error Message: GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+# See: https://github.com/github/pages-gem/issues/399
+github: [metadata]
