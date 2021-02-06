@@ -17,7 +17,7 @@ keywords:
 ## Other Resources
 
 ### Java EE
-- [Enterprise Java (605.784.31) Fall 2019 |  John's Hopkins University, Engineering Programs for Professionals](https://webdev.jhuep.com/~jcs/ejava-javaee/)
+- [Enterprise Java (605.784.31) Fall 2019 @  John's Hopkins University, Engineering Programs for Professionals](https://webdev.jhuep.com/~jcs/ejava-javaee/)
 
 ### JavaServer Faces
 - [JSF 2.2 View Declaration Language: Facelets Variant](https://docs.oracle.com/javaee/7/javaserver-faces-2-2/vdldocs-facelets/index.html)

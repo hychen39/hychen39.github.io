@@ -1,8 +1,10 @@
 ---
 title:  "Angular 教學"
 permalink: /angular/
+description: "一系列的 Angular 教學文章，適合基礎入門。"
 ---
 
-# Syllabus
 
-[U13 RWD]({%post_url /angular/2021-01-13-u13_rwd_layout%})
+{% for post in site.categories["angular"] reversed %}
+<a href="{{ post.url }}">{{ post.title }}</a>
+{% endfor %}
