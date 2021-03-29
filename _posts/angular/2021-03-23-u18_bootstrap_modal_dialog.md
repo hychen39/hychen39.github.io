@@ -21,7 +21,7 @@ keywords:
 <span class="step"></span> 使用 npm 下載需要的程式碼到專案中。
 
 ```
-npm i bootstrap jquery popper.js --save-prod
+npm i bootstrap jquery popper.js --save
 ```
 
 Outputs:
@@ -32,8 +32,11 @@ Outputs:
 added 3 packages from 5 contributors and audited 1462 packages in 9.609s
 found 0 vulnerabilities
 ```
+指令會將上述三個 js library 加入到 專案的 `node_modules` 目錄中。
 
-<span class="step"></span> Import 到 Angular 專案, 藉由修改 `angular.json` 中的 styles 及 scripts 的屬性.
+<span class="step"></span> Import 這些 js scripts 到 Angular 專案, 使用 AngularCLI 打包。
+
+修改 `angular.json` 中的 styles 及 scripts 的屬性:
 
 ```
             "styles": [
@@ -42,6 +45,7 @@ found 0 vulnerabilities
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
 ```
@@ -49,6 +53,7 @@ found 0 vulnerabilities
 
 此方式是利用 Angular CLI 將 Bootstrap 的 style 及 scripts 打包到 bundle 中。
 
+第二個 `popper.js` 是顯示 [Popovers](https://getbootstrap.com/docs/4.6/components/popovers/) 或者 [Dropdowns](https://getbootstrap.com/docs/4.6/components/dropdowns/) 等元件所需要的 js library。
 
 ![](/assets/img/angular/u18-i01.png)
 
@@ -149,3 +154,24 @@ Ref:
 <span class="step"></span> 完成。
 
 ![](/assets/img/angular/u18-i03.gif)
+
+
+
+## Popover
+
+使用 Bootstrap Popover 元件, 除了引入必要的 js libraries 外, 還必須初始化使用 Popover 功能的元素。
+
+在 `app.component` 元件實作 `OnInit` 介面中的 `ngOnInit(): void` 方法, 加入以下的程式碼:
+
+```js
+ngOnInit(): void {
+    // Init the popover everywhere
+    // See: https://getbootstrap.com/docs/4.6/components/popovers/#example-enable-popovers-everywhere
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+}
+```
+
+此程式碼會在 Angular 載入完所有頁面的元素後, 選取具有 `data-toggle="popover"` 屬性的所有屬性, 並呼叫每個元素的 `popover()` 做初始化的動作。
+
