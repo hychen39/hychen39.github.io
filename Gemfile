@@ -39,3 +39,6 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # gem 'jekyll-include-cache'
 gem 'jekyll-seo-tag'
+
+# Upgrade the kramdown
+gem "kramdown", ">= 2.3.1"
