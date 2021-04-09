@@ -6,7 +6,6 @@ keywords:
 - bootstrap
 - "modal dialog"
 - angular
-  
 ---
 
 
