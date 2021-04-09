@@ -12,13 +12,6 @@ keywords:
 <link rel="stylesheet" href="/assets/css/header_numbering.css">
 <link rel="stylesheet" href="/assets/css/step_numbering.css">
 
-
-# Unit 20 CSS Flex-box Layout 簡介
-
-@import "css/images.css"
-@import "css/header_numbering.css"
-@import "css/step_numbering.css"
-
 ## 簡介
 
 - Flex-box Layout 是一般化的一維佈局模式(one-dimensional layout model)。
@@ -28,20 +21,20 @@ keywords:
   - 與主要流動方向垂直的軸線稱為「切軸軸線(cross axis)」 
   - 主要流動方向可以水平或垂直
 
-<div style="display: flex">
 
-![](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics1.png)
+<img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics1.png" />
 
-![](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics2.png)
+<img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics2.png" />
 
-</div>
 
 
 - 適用時機
   - menu bar 內的項目佈局
   - side bar 內的項目佈局
 
-![](img/u20-i01.png)
+![](/assets/img/angular/u20-i01.png)
+
+Figure Source: [2] 
 
 ## 使用程序
 
@@ -51,35 +44,25 @@ keywords:
 2. 決定容器的 main axis 的方向, 可以是水平方向, 亦可是垂直方向
 3. 決定 flex item 流動的方向
 
-<div style="max-width: 50%">
 
-![](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg)
-
-Figure Source: [1]
-
-</div>
-
-4. 決定 flex item 的大小
-
-<div style="max-width: 50%">
-
-![](https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg)
+<img style="max-width: 50%" src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" />
 
 Figure Source: [1]
 
-</div>
+
+4.決定 flex item 的大小
 
 
-
-5. 決定 flex item 的對齊方式
-
-<div style="max-width: 50%">
-
-![](https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg)
+<img style="max-width: 50%" src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg" />
 
 Figure Source: [1]
 
-</div>
+5.決定 flex item 的對齊方式
+
+
+<img style="max-width: 50%" src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" />
+
+Figure Source: [1]
 
 
 ## 建立 flex-box 容器; 決定流動方向
@@ -107,14 +90,14 @@ flex container 中 flex item 的尺寸**預設行為**:
 ### **flex-grow**
 最終主軸方向尺寸 = 基本尺寸 + 分配到的額外空間尺寸
 
-![](img/u20-i02.png)
+![](/assets/img/angular/u20-i02.png)
 Figure source: [2]
 
 ### **flex-shrink**
 
 最終主軸方向尺寸 = 基本尺寸 - 分配到的不足空間尺寸
 
-![](img/u20-i03.png)
+![](/assets/img/angular/u20-i03.png)
 Figure source: [3]
 
 **flex-shrink 的計算方式**
@@ -180,7 +163,7 @@ Q: 有多的 container 空間時, 如何擺放 flex-item, 沿著 main axis 的�
 Q: cross axis 方向上, flex item 尺寸不一時, 如何對齊?
 
 **align-items: flex-end**:
-![](img/u20-i04.png)
+![](/assets/img/angular/u20-i04.png)
 
 **測試區**
 
@@ -190,7 +173,7 @@ Q: cross axis 方向上, flex item 尺寸不一時, 如何對齊?
 
 [align-self playground](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container#aligning_one_item_with_align-self)
 
-![](img/u20-i05.png)
+![](/assets/img/angular/u20-i05.png)
 
 ```html
 <div class="cost bd-highlight">

@@ -29,7 +29,7 @@ Grid Layout 是一般化的二維佈局(layout)系統。
 - grid area
 - grid line
   
-![](img/u19-i01.png)
+![](/assets/img/angular/u19-i01.png)
 
 ## 使用程序
 
@@ -77,7 +77,7 @@ Grid Layout 是一般化的二維佈局(layout)系統。
 }
 ```
 
-![](img/u19-i02.png)
+![](/assets/img/angular/u19-i02.png)
 
 See https://codepen.io/hychen39/pen/RwKpyjX
 
@@ -101,7 +101,7 @@ See https://codepen.io/hychen39/pen/RwKpyjX
   display: grid;
   grid-template-columns: 200px 50% 100px;}
 ```
-![fig: 13-7](img/u19-i03.png)
+![fig: 13-7](/assets/img/angular/u19-i03.png)
 
 
 ### 方法二: 彈性 grid track
@@ -118,7 +118,7 @@ See https://codepen.io/hychen39/pen/RwKpyjX
 ```
 可用空間切割成四等份, 第 1 個 track 佔 2 等份, 第 2 及 3 track 各佔 1 等份。
 
-![](img/u19-i04.png)
+![](/assets/img/angular/u19-i04.png)
 
 
 See: https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#fr_%E5%96%AE%E4%BD%8D
@@ -156,8 +156,8 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Conc
 - `main` 在第二個 row, 寬度 2 column
 - `footer` 在第三個 row, 寬度 3 column
 
-![](img/u19-i05.png)
-![](img/u19-i06.png)
+![](/assets/img/angular/u19-i05.png)
+![](/assets/img/angular/u19-i06.png)
 
 ### 自動新增 grid track
 
@@ -196,7 +196,7 @@ Example:
   grid-column-start: 6;}
 ```
 
-![](img/u19-i07.png)
+![](/assets/img/angular/u19-i07.png)
 
 Source: Fig 13-33 in [2].
 
