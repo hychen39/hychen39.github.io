@@ -19,7 +19,7 @@ keywords:
 - flex-box 內的 item 的攞放, 可以水平方向放置, 也可依垂直方向放置。
   - 主要流動方向的軸線稱為「主軸線(main axis)」 
   - 與主要流動方向垂直的軸線稱為「切軸軸線(cross axis)」 
-  - 主要流動方向可以水平或垂直
+  - 流動方向依主軸線或者切軸軸線流動
 
 
 <img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics1.png" />
@@ -31,6 +31,7 @@ keywords:
 - 適用時機
   - menu bar 內的項目佈局
   - side bar 內的項目佈局
+  - 其它一維佈局
 
 ![](/assets/img/angular/u20-i01.png)
 
@@ -42,13 +43,39 @@ Figure Source: [2]
 ![](https://developer.mozilla.org/files/3739/flex_terms.png)
 
 2. 決定容器的 main axis 的方向, 可以是水平方向, 亦可是垂直方向
-3. 決定 flex item 流動的方向
+3. 決定 flex item 流動的方向, 沿 main 或 cross 軸.
 
 
 <img style="max-width: 50%" src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" />
 
 Figure Source: [1]
 
+Example:
+```css
+.flex-container {
+    display: flex;
+}
+
+.flow-column {
+    flex-direction: column;
+}
+```
+
+HTML:
+
+```html
+flex-direction: column 
+<ol class="flex-container flow-column bd-highlight">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>There are 5 items</li>
+</ol>
+```
+
+![](/assets/img/angular/u20-i06.png)
 
 4.決定 flex item 的大小
 
@@ -68,16 +95,18 @@ Figure Source: [1]
 ## 建立 flex-box 容器; 決定流動方向
 
 - `display: flex`: 建立 flex-box 容器. 底下的子元素成為 flex item
-- `flex-direction`: 決定 main axis 的方向
+- `flex-direction`: 決定 main axis 的方向, 可設定以下的值
   - row, row-reverse
   - column, column-reverse
 
 ## 決定 flex item 的大小
 
 flex container 中 flex item 的尺寸**預設行為**:
-- 主軸方向可縮小, 但不延展: flex item 在主軸方向的尺寸會自動縮減, 當 flex container 的尺寸變小時。但, flex container 尺寸變大時, 主軸方向的尺寸不變。
-- 切軸方向延展填滿: flex item 將被延展(stretch)填滿切軸方向的空間。
-- flex item 大小
+- 主軸方向可縮小, 但不延展: 
+  - flex item 在主軸方向的尺寸會自動縮減, 當 flex container 的尺寸變小時。
+  - 但, flex container 尺寸變大時, 主軸方向的尺寸不變。
+- 切軸方向延展填滿: flex item 將被延展(stretch)填滿切軸方向的空間(可讓元素高度自動對齊)。
+- flex item 大小預設為 auto (`flex-basis:auto`), 寛度為內容的大小。
 
 設定 flex item 大小的 CSS 特性:
 - `flex-basis`:  item 的主軸方向的基本尺寸
@@ -118,7 +147,7 @@ item 3 最終尺寸: 300px - 3 * 30px = 210px
 item 的尺寸預設行為:
 - `flex-basis:auto` - 依內容決定大小
 - `flex-shrink: 1` - 尺寸可縮小
-- `flex-growth: 0` - 但不放大
+- `flex-grow: 0` - 但不放大
 
 
 ```css
@@ -130,7 +159,7 @@ item 的尺寸預設行為:
 
 ```css
 .item {
-  flex-gro: 2;
+  flex-grow: 2;
   flex-shrink: 1;
   flex-basis: auto;
 }
@@ -161,6 +190,8 @@ Q: 有多的 container 空間時, 如何擺放 flex-item, 沿著 main axis 的�
 ### align-items
 
 Q: cross axis 方向上, flex item 尺寸不一時, 如何對齊?
+
+`align-items` 的預設值為 `stretch`.
 
 **align-items: flex-end**:
 ![](/assets/img/angular/u20-i04.png)

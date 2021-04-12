@@ -79,20 +79,20 @@ Grid Layout 是一般化的二維佈局(layout)系統。
 
 ![](/assets/img/angular/u19-i02.png)
 
-See https://codepen.io/hychen39/pen/RwKpyjX
+See [https://codepen.io/hychen39/pen/RwKpyjX](https://codepen.io/hychen39/pen/RwKpyjX)
 
 ## Grid Container 內建立垂直及水平 track 
 
-重要的
 設定 grid layout 顯示:
 - `display: grid`
 
 切割區域內的內容:
 
-`grid-template-row`: 建立水平 track
-`grid-template-column`: 建立垂直 track
+- `grid-template-row`: 建立水平 track
+- `grid-template-column`: 建立垂直 track
 
 ### 建立垂直 track
+
 #### 方法一:  固定**尺寸**或**百分比**長度單位
 
 固定**尺寸**或**百分比**等長度單位方式指定欄位寛度
@@ -121,10 +121,11 @@ See https://codepen.io/hychen39/pen/RwKpyjX
 ![](/assets/img/angular/u19-i04.png)
 
 
-See: https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#fr_%E5%96%AE%E4%BD%8D
+See: 
+- [格線佈局的基本概念 - CSS @ MDN](https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#fr_%E5%96%AE%E4%BD%8D)
 
 
-- 使用 `repeat()` 可重覆建立 track
+- 使用 `repeat()` 函數可重覆建立 track
 - 前面的例子可改寫成: 
   
 ```css
@@ -134,10 +135,10 @@ See: https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout/Basic_Conc
 }
 ```
 
-See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#track_listings_with_repeat_notation
+See: [Basic Concepts of grid layout - CSS: Cascading Style Sheets @ MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#track_listings_with_repeat_notation)
 
 ### 切割方法三:  grid area
-
+Grid Area 的形狀限制:
 - Grid area 可以橫跨多個 column 及 row
 - Grid area 必須是四方形, 無法建立 L 型的 area.
 
@@ -157,6 +158,7 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Conc
 - `footer` 在第三個 row, 寬度 3 column
 
 ![](/assets/img/angular/u19-i05.png)
+
 ![](/assets/img/angular/u19-i06.png)
 
 ### 自動新增 grid track
@@ -175,6 +177,7 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Conc
 
 ![](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout/1_diagram_numbered_grid_lines.png)
 
+指定 grid item 的起啟與結束的 line:
 - `grid-row-start`, `grid-row-start`: grid item 的啟始與結束 grid row line 編號
 - `grid-column-start`, `grid-column-start`: grid item 的啟始與結束 grid column line 編號
 
@@ -261,8 +264,7 @@ Source: Fig 13-33 in [2].
 ```
 
 
-
-See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid#using_the_span_keyword
+See: [Line-based placement with CSS Grid - CSS: Cascading Style Sheets @ MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid#using_the_span_keyword)
 
 ## References
 1. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
