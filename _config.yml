@@ -106,3 +106,7 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
+
+# Enable to include _includes/analytics-providers/custom.html
+analytics:
+  provider: "custom"

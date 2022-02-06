@@ -10,3 +10,6 @@ main:
 
   - title: "Maven How-To"
     url: /maven/
+
+  - title: "流量追踪 Demo"
+    url: /ga/
