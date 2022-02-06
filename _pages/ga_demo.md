@@ -32,8 +32,9 @@ function sendOutboundEvent(event) {
 </script>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF6M9VZ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF6M9VZ" height="0" width="0" style="display:none;visibility:hidden">
+</iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -45,3 +46,9 @@ function sendOutboundEvent(event) {
 此連結不會轉跳, 只會傳送事件 hit 給 GA 伺服器。
 
 ## 使用 GTM 進行事件追踪
+
+
+<a class="btn-click-event">會觸發的連結</a>
+<a class="btn">不會觸發的連結</a>
+
+<a class="outbound_link" href="https://yahoo.com.tw/" onclick="(function(e){e.preventDefault();})(event)"> Yahoo Taiwan </a>
