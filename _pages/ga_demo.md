@@ -51,4 +51,4 @@ function sendOutboundEvent(event) {
 <a class="btn-click-event">會觸發的連結</a>
 <a class="btn">不會觸發的連結</a>
 
-<a class="outbound_link" href="https://yahoo.com.tw/" onclick="(function(e){e.preventDefault();})(event)"> Yahoo Taiwan </a>
+<a class="outbound_link" href="https://yahoo.com.tw/"> Yahoo Taiwan </a>
