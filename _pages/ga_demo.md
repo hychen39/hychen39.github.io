@@ -52,3 +52,26 @@ function sendOutboundEvent(event) {
 <a class="btn">不會觸發的連結</a>
 
 <a class="outbound_link" href="https://yahoo.com.tw/"> Yahoo Taiwan </a>
+
+## 使用 GTM 資料層，收集自訂指標資料
+
+<script>
+    var entryTime = Date.now();
+   
+    function clickTimeInterval(){
+        let clickTime = Date.now();
+        let intervalSeconds = (clickTime - entryTime)/1000
+        entryTime = clickTime;
+        console.log(intervalSeconds)
+        //將資料送入 dataLayer 
+        //使用的 key 值需和先前新增GTM變數時使手的「資料層變數名稱」一致
+        dataLayer.push({'clickTimeInterval': intervalSeconds});
+        document.getElementById("clickTimeInterval").innerText = intervalSeconds;
+        return true;
+    }
+</script>
+
+<a class="btn btn-dataLayer"  
+    onClick = "clickTimeInterval()" > 傳送點擊間隔時間 </a> <br />
+
+<div id="clickTimeInterval"></div>
