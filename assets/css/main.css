@@ -951,7 +951,11 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
 
 /* @media (min-width: 80em) { .page { width: calc(100% - 300px); padding-right: 300px; } } */
 /* 加寛版面 2021/7/10 */
-@media (min-width: 80em) { .page { width: calc(100% - 200px); padding-right: 200px; } }
+@media (min-width: 80em) { 
+  .page { width: calc(100% - 100px); 
+          /* padding-right: 100px;  */
+        } 
+}
 .page .page__inner-wrap { float: left; margin-top: 1em; margin-left: 0; margin-right: 0; width: 100%; clear: both; }
 .page .page__inner-wrap .page__content, .page .page__inner-wrap .page__meta, .page .page__inner-wrap .comment__date, .page .page__inner-wrap .page__share { position: relative; float: left; margin-left: 0; margin-right: 0; width: 100%; clear: both; }
 
